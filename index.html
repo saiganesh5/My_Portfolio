@@ -12,6 +12,13 @@
     }
 
     document.documentElement.classList.add('dark');
+	
+	const toggleBtn = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  toggleBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
   </script>
   <style>
     html {
@@ -28,7 +35,64 @@
   </style>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans transition-colors duration-300">
+<!-- Navigation -->
+<nav class="bg-gray-100 dark:bg-gray-900 fixed top-0 w-full z-50 shadow">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      
+      <!-- Logo or Brand Name -->
+      <div class="flex-shrink-0 text-xl font-semibold text-gray-800 dark:text-gray-100">
+        Sai Ganesh Dhara
+      </div>
+      
+      <!-- Menu Toggle Button (Mobile) -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-800 dark:text-gray-100 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
 
+      <!-- Navigation Links -->
+      <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-800 dark:text-gray-100">
+        <a href="#home" class="hover:text-indigo-600">Home</a>
+        <a href="#about" class="hover:text-indigo-600">About</a>
+        <a href="#skills" class="hover:text-indigo-600">Skills</a>
+        <a href="#projects" class="hover:text-indigo-600">Projects</a>
+        <a href="#contact" class="hover:text-indigo-600">Contact</a>
+        <!-- Download Resume Button -->
+        <a 
+          href="C:\Users\Asus\OneDrive\Desktop\PES CA1\9381103596_Saiganesh.pdf" 
+          download 
+          class="ml-4 bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition" target = "_blank"
+        >
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2 text-gray-800 dark:text-gray-100">
+    <a href="#home" class="block hover:text-indigo-600">Home</a>
+    <a href="#about" class="block hover:text-indigo-600">About</a>
+    <a href="#skills" class="block hover:text-indigo-600">Skills</a>
+    <a href="#projects" class="block hover:text-indigo-600">Projects</a>
+    <a href="#contact" class="block hover:text-indigo-600">Contact</a>
+    <!-- Mobile Download Resume -->
+    <a 
+      href="9381103596_Saiganesh.pdf" 
+      download 
+      class="block mt-2 bg-indigo-600 text-white text-center px-4 py-2 rounded-full hover:bg-indigo-700 transition"
+    >
+      Download Resume
+    </a>
+  </div>
+</nav>
+
+  
   <!-- Toggle Theme Button -->
   <button onclick="document.documentElement.classList.toggle('dark')"
     class="fixed top-4 right-4 bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1 rounded z-50">
@@ -36,93 +100,166 @@
   </button>
 
   <!-- Hero Section -->
-  <section class="bg-white dark:bg-gray-800 py-20 text-center shadow-md">
-    <h1 class="text-4xl font-bold text-indigo-600 dark:text-indigo-400">Sai Ganesh Dhara</h1>
-    <p class="text-lg mt-2 typing text-indigo-500 font-mono" id="typing"></p>
-    <p class="mt-4 max-w-xl mx-auto">
-      I'm an enthusiastic developer with a strong focus on Data Structures and Algorithms (DSA).
-      I specialize in building efficient applications using Java and OOP while enhancing my problem-solving skills.
-      With experience analyzing manufacturing datasets, I enable data-driven decisions.
-      Currently, I’m focused on Trees and other DSA core concepts.
+<section class="min-h-screen flex items-center justify-center px-6 py-12 bg-white dark:bg-gray-900">
+  <div class="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+    <!-- Left Side: Text Content -->
+    <div class="space-y-6">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
+        Hi, I'm Sai Ganesh Dhara
+      </h1>
+
+      <h2 class="text-xl md:text-2xl font-medium text-indigo-600 dark:text-indigo-400">
+        <span id="typing" class="typing"></span>
+      </h2>
+
+      <p class="text-base md:text-lg text-gray-600 dark:text-gray-300">
+        I'm an enthusiastic developer with a strong focus on Data Structures and Algorithms (DSA). I specialize in building efficient applications using Java and object-oriented programming while continuously enhancing my problem-solving skills in DSA. With experience analyzing large manufacturing datasets, I enable data-driven decisions. 
+      </p>
+      </p>
+
+      <!-- Add buttons or links here if needed -->
+      <div class="flex space-x-4">
+        <a href="#contact" class="px-5 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition">
+          Contact Me
+        </a>
+        <a href="#projects" class="px-5 py-2 border border-indigo-600 text-indigo-600 rounded-xl hover:bg-indigo-100 transition">
+          See Projects
+        </a>
+      </div>
+    </div>
+
+	
+	
+
+    <!-- Right Side: Image -->
+<div class="flex justify-center md:justify-end">
+  <img src="C:\Users\Asus\OneDrive\Pictures\wallpapers\IMG_20230121_122004.jpg" 
+       alt="Sai Ganesh Dhara" 
+       class="rounded-full w-72 h-72 object-cover shadow-lg border-4 border-indigo-500 dark:border-indigo-400">
+</div>
+</section>
+
+
+
+
+
+  <!-- Skills Section -->
+<section id="skills" class="py-16 bg-gray-50 dark:bg-gray-900 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 dark:text-white mb-12">
+      Skills
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- Languages -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 space-y-4">
+        <h3 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400">Languages</h3>
+        <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
+          <li>Java</li>
+          <li>Python</li>
+          <li>C</li>
+          <li>JavaScript</li>
+          
+        </ul>
+      </div>
+
+      <!-- Frameworks -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 space-y-4">
+        <h3 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400">Frameworks</h3>
+        <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
+		<li>HTML</li>
+          <li>CSS</li>
+          <li>React</li>
+          <li>Node.js (basics)</li>
+		  
+        </ul>
+      </div>
+
+      <!-- Tools -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 space-y-4">
+        <h3 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400">Tools</h3>
+        <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
+          <li>Git & GitHub</li>
+          <li>MySQL</li>
+          
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ <!-- Projects -->
+<section class="bg-white dark:bg-gray-800 py-16 px-4" id="projects">
+  <div class="max-w-5xl mx-auto text-center mb-12">
+    <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">Projects</h2>
+    <p class="text-gray-600 dark:text-gray-300">
+      A selection of projects demonstrating my skills in software development, machine learning, and data analysis.
     </p>
-    <a href="9381103596_Saiganesh.pdf" download
-      class="mt-6 inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg transition">
-      Download Resume
-    </a>
-  </section>
+  </div>
 
-  <!-- Skills -->
-  <section class="py-16 px-4" id="skills">
-    <h2 class="text-2xl font-semibold text-center mb-6">Skills</h2>
-    <div class="flex flex-wrap justify-center gap-4">
-      <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-4 py-2 rounded-full">Java</span>
-      <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-4 py-2 rounded-full">Python</span>
-      <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-4 py-2 rounded-full">C</span>
-      <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-4 py-2 rounded-full">HTML</span>
-      <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-4 py-2 rounded-full">CSS</span>
-      <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-4 py-2 rounded-full">JavaScript</span>
-      <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-4 py-2 rounded-full">MySQL</span>
-      <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-4 py-2 rounded-full">Data Analysis</span>
-      <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-4 py-2 rounded-full">Machine Learning</span>
-      <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-4 py-2 rounded-full">DSA</span>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section class="bg-white dark:bg-gray-800 py-16 px-4" id="projects">
-    <h2 class="text-2xl font-semibold text-center mb-8">Projects</h2>
-    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow">
-        <h3 class="text-lg font-bold mb-2">Attendance Management System</h3>
-        <p>Java GUI-based system integrated with MySQL for managing student attendance efficiently.</p>
-      </div>
-      <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow">
-        <h3 class="text-lg font-bold mb-2">Patient Treatment Classification</h3>
-        <p>ML model to classify patient treatments based on medical and diagnostic data.</p>
-      </div>
-      <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow">
-        <h3 class="text-lg font-bold mb-2">Contact Management System</h3>
-        <p>Java-based desktop application to store and manage contacts with search functionality.</p>
-      </div>
-      <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow">
-        <h3 class="text-lg font-bold mb-2">EDA on World Airport Data</h3>
-        <p>Explored global airport datasets using Python to extract insights on traffic and distribution.</p>
-      </div>
-    </div>
-  </section>
-  
-  
-  <!-- Education -->
-<section class="bg-gray-100 dark:bg-gray-900 py-16 px-4" id="education">
-  <h2 class="text-2xl font-semibold text-center mb-8">Education</h2>
-  <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+  <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
     
-    <!-- Class X -->
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
-      <h3 class="text-lg font-bold">Class X</h3>
-      <p><strong>School:</strong> Sri Chaitanya EM School</p>
-      <p><strong>Place:</strong> Ananthapur, Andhra Pradesh</p>
-      <p><strong>CGPA:</strong> 9.7</p>
-    </div>
+    <!-- Project Card -->
+    <a href="https://github.com/saiganesh5/AttendanceManagementSystem" target="_blank" class="group block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transform transition hover:-translate-y-1">
+      <img src="https://ubsapp.com/wp-content/uploads/2022/03/attendance_management-copy-2048x1188.png" alt="Attendance Management System" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+      <div class="p-4 bg-gray-50 dark:bg-gray-700">
+        <h3 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 group-hover:underline">Attendance Management System</h3>
+        <p class="text-gray-700 dark:text-gray-300 mt-2">Java GUI + MySQL-based system for managing student attendance efficiently.</p>
+      </div>
+    </a>
 
-    <!-- Class XII -->
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
-      <h3 class="text-lg font-bold">Class XII</h3>
-      <p><strong>School:</strong> Sri Chaitanya JR College</p>
-      <p><strong>Place:</strong> Vijayawada, Andhra Pradesh</p>
-      <p><strong>Percentage:</strong> 96.6%</p>
-    </div>
+    <!-- Project Card -->
+    <a href="https://github.com/username/patient-treatment-classification" target="_blank" class="group block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transform transition hover:-translate-y-1">
+      <img src="https://storage.googleapis.com/kaggle-datasets-images/1164243/1950777/1af06f4e6e259b67cf2c4a63ebe6f5b6/dataset-cover.jpg?t=2021-02-17-06-47-03" alt="Patient Treatment Classification" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+      <div class="p-4 bg-gray-50 dark:bg-gray-700">
+        <h3 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 group-hover:underline">Patient Treatment Classification</h3>
+        <p class="text-gray-700 dark:text-gray-300 mt-2">ML model to classify patient treatments from diagnostic data.</p>
+      </div>
+    </a>
 
-    <!-- B.Tech -->
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
-      <h3 class="text-lg font-bold">B.Tech</h3>
-      <p><strong>College:</strong> Lovely Professional University</p>
-      <p><strong>Place:</strong> Jalandhar, Punjab</p>
-      <p><strong>CGPA:</strong> 6.25</p>
-    </div>
+    <!-- Project Card -->
+    <a href="https://github.com/username/contact-management-system" target="_blank" class="group block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transform transition hover:-translate-y-1">
+      <img src="https://www.erp-information.com/wp-content/uploads/2023/10/overview-of-contact-management.png?ezimgfmt=ng:webp/ngcb3" alt="Contact Management System" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+      <div class="p-4 bg-gray-50 dark:bg-gray-700">
+        <h3 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 group-hover:underline">Contact Management System</h3>
+        <p class="text-gray-700 dark:text-gray-300 mt-2">Java-based desktop app to store and manage contacts with search support.</p>
+      </div>
+    </a>
+
+    <!-- Project Card -->
+    <a href="https://github.com/username/world-airport-eda" target="_blank" class="group block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transform transition hover:-translate-y-1">
+      <img src="https://seleritysas.com/wp-content/uploads/2020/04/shutterstock_745544935.jpg" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+      <div class="p-4 bg-gray-50 dark:bg-gray-700">
+        <h3 class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 group-hover:underline">EDA on World Airport Data</h3>
+        <p class="text-gray-700 dark:text-gray-300 mt-2">Data exploration on airport traffic & locations using Python and Pandas.</p>
+      </div>
+    </a>
 
   </div>
 </section>
+
+
+<!-- Certifications -->
+<section class="bg-white dark:bg-gray-900 py-16 px-4" id="certifications">
+  <h2 class="text-2xl font-semibold text-center mb-8 text-gray-900 dark:text-white">Certifications</h2>
+  <div class="max-w-4xl mx-auto space-y-4 text-gray-800 dark:text-gray-200">
+    <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-xl shadow">
+      <h3 class="text-lg font-bold">Programming and Data Structures using Java</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400">Cipher Schools &mdash; <span class="italic">Jul ‘24</span></p>
+    </div>
+    <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-xl shadow">
+      <h3 class="text-lg font-bold">Data Science</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400">LinkedIn &mdash; <span class="italic">Apr ‘23</span></p>
+    </div>
+  </div>
+</section>
+
+  
+  
+  
 
 <section id="education" class="py-16 px-4 bg-white dark:bg-gray-900">
   <div class="max-w-5xl mx-auto">
@@ -195,18 +332,7 @@
 </section>
 
 
-  <!-- Contact -->
   
-  <section class="py-16 text-center" id="contact">
-    <h2 class="text-2xl font-semibold mb-4">Contact</h2>
-    <p>Feel free to reach out or connect with me.</p>
-    <div class="mt-6 flex flex-col md:flex-row justify-center gap-4 text-indigo-600 dark:text-indigo-400">
-      <a href="mailto:saiganesh0813@gmail.com" class="hover:underline">saiganesh0813@gmail.com</a>
-      <a href="mailto:ganeshsai0813@gmail.com" class="hover:underline">ganeshsai0813@gmail.com</a>
-      <a href="https://github.com/saiganesh5" target="_blank" class="hover:underline">GitHub</a>
-      <a href="https://www.linkedin.com/in/sai-ganesh-1719431b9/" target="_blank" class="hover:underline">LinkedIn</a>
-    </div>
-  </section>
   
   
   <section id="contact" class="py-16 px-4 bg-gray-50 dark:bg-gray-900">
@@ -260,7 +386,7 @@
 
       <!-- Contact Form -->
       <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow">
-        <h3 class="text-xl font-semibold mb-6 text-gray-800 dark:text-white">Send Me a Message</h3>
+        <h3 class="text-xl font-semibold mb-6 text-gray-800 dark:text-white">Drop Me a Message</h3>
         <form action="https://formspree.io/f/yourFormID" method="POST" class="space-y-4">
           <div>
             <label class="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Name</label>
@@ -287,29 +413,29 @@
     &copy; 2025 Sai Ganesh Dhara. All rights reserved.
   </footer>
 
-  <!-- Typing Script -->
-  <script>
-    const roles = ["Java Developer", "DSA Enthusiast", "Data Analyst"];
-    let roleIndex = 0;
-    let charIndex = 0;
+  <!-- Typing Effect Script -->
+<script>
+
+  const roles = ["Java Developer", "Data Analyst", "React Enthusiast"];
+  let i = 0, j = 0, current = "", isDeleting = false;
+
+  function type() {
     const typingElement = document.getElementById("typing");
-
-    function type() {
-      if (charIndex < roles[roleIndex].length) {
-        typingElement.textContent += roles[roleIndex][charIndex];
-        charIndex++;
-        setTimeout(type, 100);
-      } else {
-        setTimeout(() => {
-          typingElement.textContent = "";
-          charIndex = 0;
-          roleIndex = (roleIndex + 1) % roles.length;
-          type();
-        }, 1500);
-      }
+    if (!isDeleting && j <= roles[i].length) {
+      current = roles[i].substring(0, j++);
+      typingElement.textContent = current;
+      setTimeout(type, 100);
+    } else if (isDeleting && j >= 0) {
+      current = roles[i].substring(0, j--);
+      typingElement.textContent = current;
+      setTimeout(type, 60);
+    } else {
+      isDeleting = !isDeleting;
+      if (!isDeleting) i = (i + 1) % roles.length;
+      setTimeout(type, 800);
     }
-
-    document.addEventListener("DOMContentLoaded", type);
-  </script>
+  }
+  type();
+</script>
 </body>
 </html>
